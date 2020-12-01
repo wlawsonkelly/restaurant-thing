@@ -60,15 +60,15 @@ app.post("/api/tables", function(req, res) {
 
   if (tables.length < 5) {
     tables.push(newTable);
-    //res.json(newTable);
+    res.json(newTable);
   } else {
     waitList.push(newTable);
-   //res.json(newTable);
+   res.json(newTable);
   }
 
 });
 
-app.post("/api/tables", function(req, res) {
+app.post("/api/clear", function(req, res) {
   tables = [];
   waitList = [];
   });
