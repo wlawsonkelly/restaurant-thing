@@ -14,7 +14,6 @@ var tables = [
     customerEmail: 900,
     customerID: 2000
   }
- 
 ];
 
 app.get("/", function(req, res) {
