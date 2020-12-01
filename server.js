@@ -28,12 +28,6 @@ var tables = [
   }
 ];
 
-var waitList = [
-    {
-        
-    }
-]
-
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
@@ -51,26 +45,20 @@ app.get("/api/tables", function(req, res) {
 });
 
 app.get("/api/waitlist", function(req, res) {
-    return res.json(waitList);
+    return res.json(tables.filter(function(table, index){
+        return index > 4;
+    }));
   });
 
 app.post("/api/tables", function(req, res) {
   var newTable = req.body;
   console.log(newTable);
-
-  if (tables.length < 5) {
     tables.push(newTable);
-    //res.json(newTable);
-  } else {
-    waitList.push(newTable);
-   //res.json(newTable);
-  }
-
+    res.json(true)
 });
 
-app.post("/api/tables", function(req, res) {
+app.get("/api/clear", function(req, res) {
   tables = [];
-  waitList = [];
   });
 
 // Starts the server to begin listening
