@@ -58,7 +58,7 @@ app.post("/api/tables", function(req, res) {
 });
 
 app.get("/api/clear", function(req, res) {
-  tables = [];
+  tables = []; console.log("hello!");
   });
 
 // Starts the server to begin listening
