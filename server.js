@@ -9,27 +9,16 @@ app.use(express.json());
 
 var tables = [
   {
-    name: "Yoda",
-    email: "yoda@gmial.com",
-    phone: 900,
-    id: 2000
-  },
-  {
-    name: "obi",
-    email: "obi@gmail.com",
-    phone: 900,
-    id: 2000
-  },
-  {
-    name: "darth",
-    email: "darth@gmail.com",
-    phone: 1800,
-    id: 2000
+    customerName: "Yoda",
+    phoneNumber: "yoda@gmial.com",
+    customerEmail: 900,
+    customerID: 2000
   }
+ 
 ];
 
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.get("/tables", function(req, res) {
