@@ -51,7 +51,7 @@ app.get("/api/tables", function(req, res) {
 });
 
 app.get("/api/waitlist", function(req, res) {
-    return res.json(tables);
+    return res.json(waitList);
   });
 
 app.post("/api/tables", function(req, res) {
